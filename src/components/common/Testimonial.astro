@@ -1,18 +1,20 @@
 ---
 import TestImage from "@assets/images/testimonial@2x.webp";
 import Paragraph from "@components/Paragraph.astro";
-
+import Container from "@components/Container.astro";
+import Title from "@components/Title.astro";
 import { Image } from "astro:assets";
 import { getI18N } from "@i18n/index";
-import Title from "@components/Title.astro";
-import Container from "@components/Container.astro";
+
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
 const { title, subTitle, body, bodyTitle } = i18n.Testimonial;
 ---
 
 <Container extraClases="bg-cardBackgroud rounded-xl p-6 my-16">
-  <div class="flex justify-between">
+  <div
+    class="flex justify-between mb-4 place-content-center items-center md:flex-row flex-col"
+  >
     <Title clases="text-Black">{title}</Title>
     <p
       class="text-primary text-left font-semibold text-base opacity-100 tracking-[.45px] leading-10"
@@ -20,8 +22,11 @@ const { title, subTitle, body, bodyTitle } = i18n.Testimonial;
       {subTitle}
     </p>
   </div>
+
   <div class="bg-Light rounded-xl p-8">
-    <section class="flex items-center">
+    <section
+      class="flex items-center place-content-center md:flex-row flex-col"
+    >
       <Image
         src={TestImage}
         alt={"Testimonial profile"}
@@ -30,9 +35,9 @@ const { title, subTitle, body, bodyTitle } = i18n.Testimonial;
         loading={"lazy"}
         class={" rounded-full w-[124px] h-[124px] drop-shadow-lg "}
       />
-      <div class="ml-4">
+      <div class="md:ml-4 ml-0">
         <h2
-          class="py-2 font-semibold text-left text-base leading-10 opacity-100 tracking-[.45px] text-Black"
+          class="py-2 font-semibold text-center md:text-left text-base leading-10 opacity-100 tracking-[.45px] text-Black"
         >
           {bodyTitle}
         </h2>

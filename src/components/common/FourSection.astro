@@ -13,7 +13,9 @@ const i18n = getI18N({ currentLocale });
 const { title, body, body2, body3 } = i18n.FourPhotosSection;
 ---
 
-<section class="bg-cardBackgroud flex flex-col place-content-center h-[598px]">
+<section
+  class="bg-cardBackgroud flex-wrap flex flex-col place-content-center h-auto lg:h-[598px] py-6"
+>
   <Container extraClases=" flex flex-col md:flex-row">
     <div class="md:w-1/2 items-center">
       <Title clases="text-Black">
@@ -31,7 +33,9 @@ const { title, body, body2, body3 } = i18n.FourPhotosSection;
         {body3}
       </Paragraph>
     </div>
-    <aside class="flex md:ml-4 md:w-1/2 mt-4 md:mt-0">
+    <aside
+      class="flex md:ml-4 md:w-1/2 mt-4 md:mt-0 place-content-center items-center"
+    >
       <div class="grid grid-cols-2">
         <Image class={"w-[313px] h-[239px]"} src={Image1} alt={"image"} />
         <Image class={" w-[313px] h-[239px]"} src={Image2} alt={"image"} />

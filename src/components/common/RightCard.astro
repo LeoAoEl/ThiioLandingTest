@@ -11,10 +11,10 @@ const i18n = getI18N({ currentLocale });
 const { section1, section2, section3, title } = i18n.Cards.right;
 ---
 
-<section class="ml-4 rounded-3xl bg-cardBackgroud p-6">
+<section class="ml-0 md:ml-4 rounded-3xl bg-cardBackgroud p-6">
   <Title clases="text-Black text-center">{title}</Title>
 
-  <div>
+  <div class="place-content-center flex-col flex">
     <div class="flex items-center py-2">
       <Image
         src={Icon1}

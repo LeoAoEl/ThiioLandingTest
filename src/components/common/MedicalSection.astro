@@ -14,19 +14,19 @@ const i18n = getI18N({ currentLocale });
 const { title, body, body2, info } = i18n.MedilcalSection;
 ---
 
-<Card>
-  <section class="flex mb-10">
-    <div class="h-[241px] w-1/2 md:w-1/3">
+<Card clases="flex flex-col lg:flex-row lg:flex-col">
+  <section class="flex flex-col lg:flex-row mb-10 w-full">
+    <div class="w-full lg:w-1/3">
       <Image
         src={Imagen}
-        alt={"Pills Image"}
-        quality={"low"}
-        loading={"lazy"}
+        alt="Pills Image"
+        quality="low"
+        loading="lazy"
         format="avif"
-        class={" h-full w-full"}
+        class="h-auto lg:h-[241px] w-full"
       />
     </div>
-    <aside class="flex flex-col ml-4 place-content-start w-1/2 md:w-2/3">
+    <aside class="flex flex-col ml-0 lg:ml-4 w-full lg:w-2/3">
       <Title clases="text-primary py-2">
         {title}
       </Title>
@@ -38,31 +38,34 @@ const { title, body, body2, info } = i18n.MedilcalSection;
       </Paragraph>
     </aside>
   </section>
-  <div class="border-t border-gray-100 my-6"></div>
+  <div class="border-t border-gray-100 my-6 w-full"></div>
 
-  <div class="flex flex-col sm:flex-row">
-    <div class="sm:w-full md:w-1/2">
-      <div>
-        <Title clases="text-Black">{info.title}</Title>
-        <Paragraph>{info.body}</Paragraph>
+  <div class="flex flex-col sm:flex-row items-center justify-center w-full">
+    <section class="w-full lg:w-2/3 flex justify-center">
+      <div class="justify-center items-center place-content-center">
+        <Title clases="text-black">{info.title}</Title>
+        <Paragraph clases=" text-pretty">{info.body}</Paragraph>
       </div>
-    </div>
-    <aside class="flex flex-col justify-center sm:w-full md:w-1/2">
-      <div class="flex justify-evenly">
+    </section>
+
+    <aside
+      class="flex flex-col justify-center items-center w-full lg:w-1/3 mt-4 md:mt-0 place-content-center"
+    >
+      <div class="flex justify-end gap-2 items-center w-full">
         <div
-          class="text-primary text-base leading-6 tracking-[.4px] font-bold p-6 bg-detailsBackgroud h-[100px] text-center w-[120px] rounded-3xl flex flex-col items-center"
+          class="text-primary text-base leading-6 tracking-[.4px] font-bold p-6 bg-detailsBackgroud rounded-3xl flex flex-col items-center"
         >
           <Medicine />
           <span>{info.section1}</span>
         </div>
         <div
-          class="text-primary text-base leading-6 tracking-[.4px] flex font-bold p-6 bg-detailsBackgroud h-[100px] text-center w-[120px] rounded-3xl items-center flex-col"
+          class="text-primary text-base leading-6 tracking-[.4px] font-bold p-6 bg-detailsBackgroud rounded-3xl flex flex-col items-center"
         >
           <Clock />
           <span>{info.section2}</span>
         </div>
         <div
-          class="text-primary text-base leading-6 tracking-[.4px] font-bold p-8 bg-detailsBackgroud h-[100px] text-center w-[120px] rounded-3xl flex flex-col items-center"
+          class="text-primary text-base leading-6 tracking-[.4px] font-bold p-6 bg-detailsBackgroud rounded-3xl flex flex-col items-center"
         >
           <Meal />
           <span class="truncate">{info.section3}</span>

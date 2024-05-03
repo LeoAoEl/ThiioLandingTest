@@ -8,7 +8,9 @@ const i18n = getI18N({ currentLocale });
 const { body, body2, title, subTitle } = i18n.Cards.Left;
 ---
 
-<section class="mr-4">
+<section
+  class="md:mr-4 mr-0 flex flex-col place-content-center items-center justify-center"
+>
   <span class="font-bold text-left text-primary">{subTitle}</span>
   <Title clases="text-Black pb-2">{title}</Title>
   <Paragraph clases="py-2">{body}</Paragraph>

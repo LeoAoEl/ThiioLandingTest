@@ -8,10 +8,12 @@ const { headBanner } = i18n;
 ---
 
 <main
-  class="bg-heroMain h-screen md:bg-fixed bg-no-repeat bg-scroll bg-clip-padding bg-cover bg-opacity-100"
+  class="bg-heroMain h-auto md:min-h-screen md:bg-fixed bg-no-repeat bg-scroll bg-clip-padding bg-cover bg-opacity-100"
 >
   <div>
-    <div class="h-[50px] bg-primary place-content-center text-center">
+    <div
+      class="h-[50px] bg-primary place-content-center text-center md:block hidden"
+    >
       <span
         class="text-Light opacity-100 font-normal text-base tracking-[.24px]"
         >{headBanner}</span
@@ -19,7 +21,9 @@ const { headBanner } = i18n;
     </div>
     <Navbar />
   </div>
-  <Container>
+  <Container
+    extraClases=" flex flex-col place-content-center justify-center items-center "
+  >
     <slot />
   </Container>
 </main>
