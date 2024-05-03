@@ -1,0 +1,16 @@
+---
+import { getI18N } from "@i18n/index";
+import Title from "@components/Title.astro";
+import Paragraph from "@components/Paragraph.astro";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+const { body, body2, title, subTitle } = i18n.Cards.Left;
+---
+
+<section class="mr-4">
+  <span class="font-bold text-left text-primary">{subTitle}</span>
+  <Title clases="text-Black pb-2">{title}</Title>
+  <Paragraph clases="py-2">{body}</Paragraph>
+  <Paragraph clases="py-2">{body2}</Paragraph>
+</section>

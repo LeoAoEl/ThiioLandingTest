@@ -1,0 +1,44 @@
+---
+import Navbar from "@components/Navbar.astro";
+import Footer from "@components/Footer.astro";
+import { getLangFromUrl } from "@i18n/utils";
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/icon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Thiio - {title}</title>
+  </head>
+  <body class="bg-Light">
+    <Navbar />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
+<style is:global>
+  code {
+    font-family:
+      Menlo,
+      Monaco,
+      Lucida Console,
+      Liberation Mono,
+      DejaVu Sans Mono,
+      Bitstream Vera Sans Mono,
+      Courier New,
+      monospace;
+  }
+</style>

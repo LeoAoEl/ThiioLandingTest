@@ -1,0 +1,52 @@
+---
+import { getI18N } from "@i18n/index";
+import { Image } from "astro:assets";
+import Icon1 from "@assets/icons/icon_01.svg";
+import Icon2 from "@assets/icons/icon_02.svg";
+import Icon3 from "@assets/icons/icon_03.svg";
+import Paragraph from "@components/Paragraph.astro";
+import Title from "@components/Title.astro";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+const { section1, section2, section3, title } = i18n.Cards.right;
+---
+
+<section class="ml-4 rounded-3xl bg-cardBackgroud p-6">
+  <Title clases="text-Black text-center">{title}</Title>
+
+  <div>
+    <div class="flex items-center py-2">
+      <Image
+        src={Icon1}
+        alt={"Brain icon"}
+        quality={"low"}
+        loading={"lazy"}
+        format={"avif"}
+        class={"w-16 h-16 "}
+      />
+      <Paragraph clases="ml-8">{section1}</Paragraph>
+    </div>
+    <div class="flex items-center py-2">
+      <Image
+        src={Icon2}
+        alt={"Brain icon"}
+        quality={"low"}
+        loading={"lazy"}
+        format={"avif"}
+        class={"w-16 h-16"}
+      />
+      <Paragraph clases="ml-8">{section2}</Paragraph>
+    </div>
+    <div class="flex items-center py-2">
+      <Image
+        src={Icon3}
+        alt={"Brain icon"}
+        quality={"low"}
+        loading={"lazy"}
+        format={"avif"}
+        class={"w-16 h-16"}
+      />
+      <Paragraph clases="ml-8">{section3}</Paragraph>
+    </div>
+  </div>
+</section>

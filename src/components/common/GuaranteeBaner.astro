@@ -1,0 +1,35 @@
+---
+import { getI18N } from "@i18n/index";
+import Guarantee from "@assets/images/seal@2x.webp";
+import { Image } from "astro:assets";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+const { subTitle, title, body } = i18n.GuaranteeBanner;
+import Card from "@components/Card.astro";
+---
+
+<Card clases="flex justify-between">
+  <div>
+    <p
+      class="text-orangeSubtitle text-left text-xl font-bold leading-normal tracking-wider"
+    >
+      {subTitle}
+    </p>
+    <h1
+      class="text-Black text-left font-bold text-2xl leading-10 tracking-wider"
+    >
+      {title}
+    </h1>
+    <p class="text-Black text-left text-base leading-7 tracking-[.24px]">
+      {body}
+    </p>
+  </div>
+  <Image
+    src={Guarantee}
+    alt={"Guarantee Image"}
+    quality={"low"}
+    loading={"lazy"}
+    format="avif"
+    class={"ml-4 w-40 h-40 drop-shadow-xl"}
+  />
+</Card>

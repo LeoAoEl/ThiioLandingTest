@@ -1,0 +1,31 @@
+---
+import { getI18N } from "@i18n/index";
+import Layout from "@layouts/Layout.astro";
+import GuaranteeIcons from "@components/common/GuaranteeIcons.astro";
+import GuaranteeBaner from "@components/common/GuaranteeBaner.astro";
+import FourSection from "@components/common/FourSection.astro";
+import MedicalSection from "@components/common/MedicalSection.astro";
+import Ingredients from "@components/common/Ingredients.astro";
+import Testimonial from "@components/common/Testimonial.astro";
+import ContentSection from "@components/common/ContentSection.astro";
+import CardContent from "@components/CardContent.astro";
+import HeroSection from "@components/common/HeroSection.astro";
+import BuySection from "@components/common/BuySection.astro";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+const { title, description } = i18n.SEO;
+---
+
+<Layout title={title} description={description}>
+  <HeroSection />
+  <CardContent />
+  <Testimonial />
+  <ContentSection />
+  <Ingredients />
+  <BuySection />
+  <MedicalSection />
+  <FourSection />
+  <GuaranteeBaner />
+  <GuaranteeIcons />
+</Layout>

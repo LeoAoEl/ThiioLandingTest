@@ -1,0 +1,33 @@
+---
+// Import necessary components and libraries
+import { getI18N } from "@i18n/index";
+import Container from "./Container.astro";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+const { title, footerSections, end, body, body2 } = i18n.Footer;
+---
+
+<footer class="bg-primary text-white py-12">
+  <Container>
+    <!-- Header Section -->
+    <div class="flex justify-between items-center border-b pb-4 mb-4">
+      <h1 class="text-xl font-bold">{title}</h1>
+      <nav>
+        <p class="px-2">{footerSections.section1}</p>
+        <p class="px-2">{footerSections.section2}</p>
+        <p class="px-2">{footerSections.section3}</p>
+        <p class="px-2">{footerSections.section4}</p>
+      </nav>
+    </div>
+
+    <!-- Body Section -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+      <p class="text-xs">{body}</p>
+      <p class="text-sm">{body2}</p>
+    </div>
+
+    <div class="mt-4 text-center text-xs">
+      <span>{end}</span>
+    </div>
+  </Container>
+</footer>

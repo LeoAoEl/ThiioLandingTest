@@ -1,0 +1,13 @@
+---
+import Container from "./Container.astro";
+interface Props {
+  clases?: string;
+}
+const { clases } = Astro.props;
+---
+
+<Container extraClases="bg-cardBackgroud rounded-xl p-6 my-16">
+  <div class={`bg-Light rounded-xl p-4 ${clases}`}>
+    <slot />
+  </div>
+</Container>

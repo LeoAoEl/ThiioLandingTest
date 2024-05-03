@@ -1,0 +1,73 @@
+---
+import Card from "@components/Card.astro";
+import { getI18N } from "@i18n/index";
+import { Image } from "astro:assets";
+import Imagen from "@assets/images/Grupo 4124@2x.webp";
+import Clock from "@assets/icons/medical/clock.astro";
+import Title from "@components/Title.astro";
+import Meal from "@assets/icons/medical/meal.astro";
+import Medicine from "@assets/icons/medical/medicine.astro";
+import Paragraph from "@components/Paragraph.astro";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+const { title, body, body2, info } = i18n.MedilcalSection;
+---
+
+<Card>
+  <section class="flex mb-10">
+    <div class="h-[241px] w-1/2 md:w-1/3">
+      <Image
+        src={Imagen}
+        alt={"Pills Image"}
+        quality={"low"}
+        loading={"lazy"}
+        format="avif"
+        class={" h-full w-full"}
+      />
+    </div>
+    <aside class="flex flex-col ml-4 place-content-start w-1/2 md:w-2/3">
+      <Title clases="text-primary py-2">
+        {title}
+      </Title>
+      <Paragraph clases="py-2">
+        {body}
+      </Paragraph>
+      <Paragraph>
+        {body2}
+      </Paragraph>
+    </aside>
+  </section>
+  <div class="border-t border-gray-100 my-6"></div>
+
+  <div class="flex flex-col sm:flex-row">
+    <div class="sm:w-full md:w-1/2">
+      <div>
+        <Title clases="text-Black">{info.title}</Title>
+        <Paragraph>{info.body}</Paragraph>
+      </div>
+    </div>
+    <aside class="flex flex-col justify-center sm:w-full md:w-1/2">
+      <div class="flex justify-evenly">
+        <div
+          class="text-primary text-base leading-6 tracking-[.4px] font-bold p-6 bg-detailsBackgroud h-[100px] text-center w-[120px] rounded-3xl flex flex-col items-center"
+        >
+          <Medicine />
+          <span>{info.section1}</span>
+        </div>
+        <div
+          class="text-primary text-base leading-6 tracking-[.4px] flex font-bold p-6 bg-detailsBackgroud h-[100px] text-center w-[120px] rounded-3xl items-center flex-col"
+        >
+          <Clock />
+          <span>{info.section2}</span>
+        </div>
+        <div
+          class="text-primary text-base leading-6 tracking-[.4px] font-bold p-8 bg-detailsBackgroud h-[100px] text-center w-[120px] rounded-3xl flex flex-col items-center"
+        >
+          <Meal />
+          <span class="truncate">{info.section3}</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</Card>

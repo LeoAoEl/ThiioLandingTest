@@ -1,0 +1,33 @@
+---
+import Protect from "@assets/icons/Guarantee/protect.astro";
+import Satisfaction from "@assets/icons/Guarantee/satisfaction.astro";
+import Lock from "@assets/icons/Guarantee/lock.astro";
+import { getI18N } from "@i18n/index";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+const { title1, title2, title3 } = i18n.GuaranteeIcons;
+---
+
+<section class="bg-guaranteeIconsB h-[121px] flex place-content-center">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-Light">
+    <div class="flex items-center justify-center">
+      <picture class="border border-Light rounded-full p-1">
+        <Protect />
+      </picture>
+      <p class="ml-2">{title1}</p>
+    </div>
+    <div class="flex items-center justify-center">
+      <picture class="border border-Light rounded-full p-1">
+        <Satisfaction />
+      </picture>
+      <p class="ml-2">{title2}</p>
+    </div>
+    <div class="flex items-center justify-center">
+      <picture class="border border-Light rounded-full p-1">
+        <Lock />
+      </picture>
+      <p class="ml-2">{title3}</p>
+    </div>
+  </div>
+</section>

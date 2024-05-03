@@ -1,0 +1,119 @@
+---
+import Container from "@components/Container.astro";
+import { Image } from "astro:assets";
+import Imagen from "@assets/images/seal@2x.webp";
+import Bottle from "@assets/images/1_bottle@2x.webp";
+import Icon1 from "@assets/icons/icon_01.svg";
+import Icon2 from "@assets/icons/icon_02.svg";
+import Icon3 from "@assets/icons/icon_03.svg";
+import GetStartedButton from "@components/GetStartedButton.astro";
+import { getI18N } from "@i18n/index";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+const { title, priceSection, body, bottomText, button, iconSection } =
+  i18n.BuySection;
+---
+
+<main class="bg-buyBackground py-16">
+  <Container>
+    <section class="bg-Light">
+      <div>
+        <Image
+          src={Bottle}
+          alt={"Bottle image"}
+          quality={"mid"}
+          loading={"lazy"}
+          format={"avif"}
+          class={"w-[276px] h-[432px] pb-2"}
+        />
+        <p class="px-4 py-2 text-Light capitalize">
+          {button}
+        </p>
+      </div>
+      <div class="pt-1">
+        <Image
+          src={Bottle}
+          alt={" Mini Bottle image"}
+          quality={"mid"}
+          loading={"lazy"}
+          format={"avif"}
+          class={"h-[181px] w-[116px]"}
+        />
+        <Image
+          src={Bottle}
+          alt={" Mini Bottle image"}
+          quality={"mid"}
+          loading={"lazy"}
+          format={"avif"}
+          class={"h-[181px] w-[116px]"}
+        />
+        <Image
+          src={Bottle}
+          alt={" Mini Bottle image"}
+          quality={"mid"}
+          loading={"lazy"}
+          format={"avif"}
+          class={"h-[181px] w-[116px]"}
+        /> m
+      </div>
+    </section>
+    <aside>
+      <h1>{title}</h1>
+      <div>
+        <div>
+          <Image
+            src={Icon1}
+            alt={"brain image"}
+            quality={"low"}
+            loading={"lazy"}
+            format={"avif"}
+            class={"w-[35px] h-[39px]"}
+          />
+          <span>{iconSection.title1}</span>
+        </div>
+        <div>
+          <Image
+            src={Icon2}
+            alt={"brain image"}
+            quality={"low"}
+            loading={"lazy"}
+            format={"avif"}
+            class={"w-[35px] h-[39px]"}
+          />
+          <span>{iconSection.title1}</span>
+        </div>
+        <div>
+          <Image
+            src={Icon3}
+            alt={"brain image"}
+            quality={"low"}
+            loading={"lazy"}
+            format={"avif"}
+            class={"w-[35px] h-[39px]"}
+          />
+          <span>{iconSection.title1}</span>
+        </div>
+      </div>
+      <p>{body}</p>
+      <div class="bg-Light p-4 rounded-3xl">
+        <div>
+          <span>{priceSection.title}</span>
+          <span>{priceSection.price}</span>
+        </div>
+        <p class="font-extrabold">{priceSection.price2}</p>
+        <GetStartedButton />
+      </div>
+      <div>
+        <Image
+          src={Imagen}
+          alt={"guarantee budget"}
+          quality={"low"}
+          loading={"lazy"}
+          format={"avif"}
+          class={"w-[120px] h-[119px]"}
+        />
+        <p>{bottomText}</p>
+      </div>
+    </aside>
+  </Container>
+</main>

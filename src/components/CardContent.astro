@@ -1,0 +1,14 @@
+---
+import Container from "@components/Container.astro";
+import LeftCard from "@components/common/LeftCard.astro";
+import RightCard from "@components/common/RightCard.astro";
+---
+
+<Container extraClases=" grid grid-cols-1 sm:grid-cols-2 my-16">
+  <div class="col-span-1 mx-auto">
+    <LeftCard />
+  </div>
+  <div class="col-span-1 mx-auto">
+    <RightCard />
+  </div>
+</Container>
