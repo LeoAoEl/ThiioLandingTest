@@ -22,7 +22,10 @@ export default {
         guaranteeIconsB: "#F5B546",
         orangeAcentuateIcon: "#EBA121",
       },
-      backgroundImage: {},
+      backgroundImage: {
+        heroMain:
+          "linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)), url('/src/assets/images/background_banner@2x.webp')",
+      },
     },
   },
   plugins: [],

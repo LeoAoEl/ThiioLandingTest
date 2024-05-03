@@ -9,10 +9,9 @@ const { title, footerSections, end, body, body2 } = i18n.Footer;
 
 <footer class="bg-primary text-white py-12">
   <Container>
-    <!-- Header Section -->
-    <div class="flex justify-between items-center border-b pb-4 mb-4">
+    <div class="flex justify-between items-center pb-4 mb-4">
       <h1 class="text-xl font-bold">{title}</h1>
-      <nav>
+      <nav class="flex flex-row divide-x-2">
         <p class="px-2">{footerSections.section1}</p>
         <p class="px-2">{footerSections.section2}</p>
         <p class="px-2">{footerSections.section3}</p>
@@ -20,13 +19,20 @@ const { title, footerSections, end, body, body2 } = i18n.Footer;
       </nav>
     </div>
 
-    <!-- Body Section -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-      <p class="text-xs">{body}</p>
-      <p class="text-sm">{body2}</p>
-    </div>
+    <p
+      class="tracking-[1.05px] text-Light opacity-100 text-left text-pretty py-4 font-normal text-base leading-6"
+    >
+      {body}
+    </p>
+    <p
+      class="tracking-[1.05px] text-Light opacity-100 text-left text-pretty py-4 font-normal text-base leading-6"
+    >
+      {body2}
+    </p>
 
-    <div class="mt-4 text-center text-xs">
+    <div
+      class="mt-4 text-center font-normal text-base leading-none tracking-[1.2px] opacity-100 text-Light"
+    >
       <span>{end}</span>
     </div>
   </Container>

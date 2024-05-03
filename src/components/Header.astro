@@ -1,0 +1,48 @@
+---
+import HeroSection from "./common/HeroSection.astro";
+import { getI18N } from "@i18n/index";
+import { Image } from "astro:assets";
+import Bottles from "@assets/images/bottles@2x.webp";
+import HeroFloatSection from "./common/HeroFloatSection.astro";
+import GetStartedButton from "./GetStartedButton.astro";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+const { body, title, subTitle } = i18n.HeroSection;
+---
+
+<HeroSection>
+  <main class="grid grid-cols-1 sm:grid-cols-2 gap-8 py-8">
+    <section class="sm:order-1 place-content-center flex">
+      <Image
+        alt={"bottle image"}
+        src={Bottles}
+        quality={"high"}
+        loading={"eager"}
+        format={"avif"}
+        class={"drop-shadow-2xl h-[502px] w-[465px] sm:w-auto"}
+      />
+    </section>
+    <aside class="sm:order-2 place-content-center">
+      <span
+        class="text-Light py-4 text-left font-bold text-base leading-7 opacity-100 tracking-[.72px]"
+        >{subTitle}</span
+      >
+      <h1
+        class="text-Light font-bold text-2xl text-left leading-10 opacity-100 py-4"
+      >
+        {title}
+      </h1>
+      <p
+        class="text-Light font-normal text-base leading-7 tracking-[.3px] opacity-100 py-6"
+      >
+        {body}
+      </p>
+
+      <div class="flex place-content-left">
+        <GetStartedButton />
+      </div>
+    </aside>
+  </main>
+  <HeroFloatSection />
+</HeroSection>

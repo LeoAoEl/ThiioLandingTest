@@ -14,30 +14,32 @@ const { title, priceSection, body, bottomText, button, iconSection } =
   i18n.BuySection;
 ---
 
-<main class="bg-buyBackground py-16">
-  <Container>
-    <section class="bg-Light">
-      <div>
+<main class="bg-buyBackground py-16 h-[935px]">
+  <Container extraClases=" grid md:grid-cols-2 gap-8">
+    <section class="bg-Light md:col-span-1 md:order-1 rounded-2xl p-8">
+      <div class="flex place-content-center">
         <Image
           src={Bottle}
           alt={"Bottle image"}
           quality={"mid"}
           loading={"lazy"}
           format={"avif"}
-          class={"w-[276px] h-[432px] pb-2"}
+          class={"w-[276px] h-[432px] "}
         />
-        <p class="px-4 py-2 text-Light capitalize">
-          {button}
-        </p>
       </div>
-      <div class="pt-1">
+      <p
+        class="px-4 h-[40px] w-[258px] mx-auto py-2 text-Light capitalize bg-primary rounded-full text-center"
+      >
+        {button}
+      </p>
+      <div class="pt-1 h-[181px] flex flex-wrap justify-between p-6">
         <Image
           src={Bottle}
           alt={" Mini Bottle image"}
           quality={"mid"}
           loading={"lazy"}
           format={"avif"}
-          class={"h-[181px] w-[116px]"}
+          class={"h-[181px] w-[116px] drop-shadow-2xl"}
         />
         <Image
           src={Bottle}
@@ -45,7 +47,7 @@ const { title, priceSection, body, bottomText, button, iconSection } =
           quality={"mid"}
           loading={"lazy"}
           format={"avif"}
-          class={"h-[181px] w-[116px]"}
+          class={"h-[181px] w-[116px] drop-shadow-2xl"}
         />
         <Image
           src={Bottle}
@@ -53,57 +55,75 @@ const { title, priceSection, body, bottomText, button, iconSection } =
           quality={"mid"}
           loading={"lazy"}
           format={"avif"}
-          class={"h-[181px] w-[116px]"}
-        /> m
+          class={"h-[181px] w-[116px] drop-shadow-2xl"}
+        />
       </div>
     </section>
-    <aside>
-      <h1>{title}</h1>
-      <div>
-        <div>
+
+    <aside class="md:col-span-1 md:order-2">
+      <h1
+        class="text-Black text-left font-bold text-5xl leading-tight tracking-[1.38px] opacity-100"
+      >
+        {title}
+      </h1>
+      <div class="bg-Light p-6 rounded-3xl flex justify-between gap-8 my-8">
+        <div class="flex items-center">
           <Image
             src={Icon1}
             alt={"brain image"}
             quality={"low"}
             loading={"lazy"}
             format={"avif"}
-            class={"w-[35px] h-[39px]"}
+            class={"w-[64px] h-[64px] mr-2"}
           />
           <span>{iconSection.title1}</span>
         </div>
-        <div>
+        <div class="flex items-center">
           <Image
             src={Icon2}
             alt={"brain image"}
             quality={"low"}
             loading={"lazy"}
             format={"avif"}
-            class={"w-[35px] h-[39px]"}
+            class={"w-[64px] h-[64px] mr-2"}
           />
           <span>{iconSection.title1}</span>
         </div>
-        <div>
+        <div class="flex items-center">
           <Image
             src={Icon3}
             alt={"brain image"}
             quality={"low"}
             loading={"lazy"}
             format={"avif"}
-            class={"w-[35px] h-[39px]"}
+            class={"w-[64px] h-[64px] mr-2"}
           />
           <span>{iconSection.title1}</span>
         </div>
       </div>
-      <p>{body}</p>
-      <div class="bg-Light p-4 rounded-3xl">
-        <div>
-          <span>{priceSection.title}</span>
-          <span>{priceSection.price}</span>
+      <p class="text-center pb-8 text-Black">{body}</p>
+      <div
+        class="bg-Light p-4 rounded-3xl flex place-content-between items-center"
+      >
+        <div class="flex flex-col">
+          <span
+            class="text-tenueText font-normal opacity-100 tracking-[.3px] text-center"
+            >{priceSection.title}</span
+          >
+          <span
+            class="line-through text-tenueText font-normal opacity-100 tracking-[.3px] text-center"
+            >{priceSection.price}</span
+          >
         </div>
-        <p class="font-extrabold">{priceSection.price2}</p>
+        <p
+          class="font-semibold text-center text-Black text-4xl
+       tracking-[.82px] opacity-100"
+        >
+          {priceSection.price2}
+        </p>
         <GetStartedButton />
       </div>
-      <div>
+      <div class="flex place-content-center py-8">
         <Image
           src={Imagen}
           alt={"guarantee budget"}
@@ -112,7 +132,11 @@ const { title, priceSection, body, bottomText, button, iconSection } =
           format={"avif"}
           class={"w-[120px] h-[119px]"}
         />
-        <p>{bottomText}</p>
+        <p
+          class="flex items-center ml-4 text-base font-bold text-Black text-left tracking-[.55px] opacity-100"
+        >
+          {bottomText}
+        </p>
       </div>
     </aside>
   </Container>

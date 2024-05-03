@@ -1,0 +1,45 @@
+---
+import { getI18N } from "@i18n/index";
+import Clock from "@assets/icons/medical/clock.astro";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+const { title1, title2, title3, title4 } = i18n.HeroSection.FloatSection;
+---
+
+<section
+  class="bg-cardBackgroud p-6 h-[132px] rounded-3xl grid md:grid-cols-2 lg:flex lg:justify-center lg:gap-8"
+>
+  <div class="flex items-center">
+    <div
+      class="bg-guaranteeIconsB rounded-2xl p-4 h-[52px] w-[52px] flex items-center justify-center text-Light"
+    >
+      <Clock />
+    </div>
+    <span class="ml-2">{title1}</span>
+  </div>
+  <div class="flex items-center">
+    <div
+      class="bg-guaranteeIconsB rounded-2xl p-4 h-[52px] w-[52px] flex items-center justify-center"
+    >
+      <Clock />
+    </div>
+    <span class="ml-2">{title2}</span>
+  </div>
+  <div class="flex items-center">
+    <div
+      class="bg-guaranteeIconsB rounded-2xl p-4 h-[52px] w-[52px] flex items-center justify-center"
+    >
+      <Clock />
+    </div>
+    <span class="ml-2">{title3}</span>
+  </div>
+  <div class="flex items-center">
+    <div
+      class="bg-guaranteeIconsB rounded-2xl p-4 h-[52px] w-[52px] flex items-center justify-center"
+    >
+      <Clock />
+    </div>
+    <span class="ml-2">{title4}</span>
+  </div>
+</section>

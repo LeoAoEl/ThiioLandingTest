@@ -1,3 +1,57 @@
 ---
+import {
+  getLangFromUrl,
+  useTranslations,
+  useTranslatedPath,
+} from "src/i18n/utils";
+import { Astronav, MenuIcon, MenuItems, StickyHeader } from "astro-navbar";
+import Container from "./Container.astro";
+import { getI18N } from "@i18n/index";
+import GetStartedButton from "./GetStartedButton.astro";
 
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+const { title, nav1, nav2 } = i18n.Navbar;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
 ---
+
+<StickyHeader class="shadow-md h-[80px] bg-Light place-content-center">
+  <Container>
+    <Astronav closeOnClick>
+      <div
+        class="flex place-content-center justify-between items-center flex-col lg:flex-row relative w-full"
+      >
+        <div
+          class="flex w-full lg:w-auto items-center justify-center lg:justify-between"
+        >
+          <a
+            title={t("nav.index")}
+            href={translatePath("/")}
+            class="text-Black uppercase text-left font-bold text-base leading-6 tracking-[1.5px] opacity-100"
+            >{title}</a
+          >
+          <div class="block lg:hidden ml-4 pt-4">
+            <MenuIcon class="w-8 h-8 text-textDark" />
+          </div>
+        </div>
+        <MenuItems class="hidden lg:flex lg:items-center lg:w-auto">
+          <ul class="flex flex-col lg:flex-row lg:gap-40 items-center">
+            <li
+              class="text-left font-normal text-base leading-5 opacity-100 tracking-[1.05px] text-Black"
+            >
+              {nav1}
+            </li>
+            <li
+              class="text-left font-normal text-base leading-5 opacity-100 tracking-[1.05px] text-Black"
+            >
+              {nav2}
+            </li>
+            <GetStartedButton />
+          </ul>
+        </MenuItems>
+      </div>
+    </Astronav>
+  </Container>
+</StickyHeader>

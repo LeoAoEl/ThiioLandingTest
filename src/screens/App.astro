@@ -9,8 +9,8 @@ import Ingredients from "@components/common/Ingredients.astro";
 import Testimonial from "@components/common/Testimonial.astro";
 import ContentSection from "@components/common/ContentSection.astro";
 import CardContent from "@components/CardContent.astro";
-import HeroSection from "@components/common/HeroSection.astro";
 import BuySection from "@components/common/BuySection.astro";
+import Header from "@components/Header.astro";
 
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
@@ -18,7 +18,7 @@ const { title, description } = i18n.SEO;
 ---
 
 <Layout title={title} description={description}>
-  <HeroSection />
+  <Header />
   <CardContent />
   <Testimonial />
   <ContentSection />
