@@ -17,7 +17,7 @@ const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
 ---
 
-<StickyHeader class="shadow-md h-[80px] bg-Light place-content-center">
+<StickyHeader class="shadow-md md:h-[80px] bg-Light place-content-center">
   <Container>
     <Astronav closeOnClick>
       <div
@@ -36,8 +36,8 @@ const translatePath = useTranslatedPath(lang);
             <MenuIcon class="w-8 h-8 text-textDark" />
           </div>
         </div>
-        <MenuItems class="hidden lg:flex lg:items-center lg:w-auto">
-          <ul class="flex flex-col lg:flex-row lg:gap-40 items-center">
+        <MenuItems class="hidden lg:flex lg:items-center lg:w-auto p-4 md:p-0">
+          <ul class="flex flex-col lg:flex-row lg:gap-40 items-center gap-4">
             <li
               class="text-left font-normal text-base leading-5 opacity-100 tracking-[1.05px] text-Black"
             >

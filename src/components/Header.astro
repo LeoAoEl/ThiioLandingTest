@@ -12,7 +12,7 @@ const { body, title, subTitle } = i18n.HeroSection;
 ---
 
 <HeroSection>
-  <main class="grid grid-cols-1 sm:grid-cols-2 gap-8 py-8">
+  <main class="grid grid-cols-1 sm:grid-cols-2 gap-8">
     <section
       class="sm:order-1 place-content-center flex items-center justify-center"
     >
@@ -25,23 +25,23 @@ const { body, title, subTitle } = i18n.HeroSection;
         class={"drop-shadow-2xl h-auto w-auto  sm:w-auto"}
       />
     </section>
-    <aside class="sm:order-2 place-content-center">
+    <aside class="sm:order-2 place-content-center text-center items-center">
       <span
         class="text-Light py-4 text-left font-bold text-base leading-7 opacity-100 tracking-[.72px]"
         >{subTitle}</span
       >
       <h1
-        class="text-Light font-bold text-2xl text-left leading-10 opacity-100 py-4"
+        class="text-Light font-bold text-2xl text-center md:text-left leading-10 opacity-100 py-4"
       >
         {title}
       </h1>
       <p
-        class="text-Light font-normal text-base leading-7 tracking-[.3px] opacity-100 py-6"
+        class="text-Light font-normal text-center md:text-left text-base leading-7 tracking-[.3px] opacity-100 py-4"
       >
         {body}
       </p>
 
-      <div class="flex place-content-left">
+      <div class="flex place-content-center md:place-content-left">
         <GetStartedButton />
       </div>
     </aside>
